@@ -1,0 +1,128 @@
+/* CSS Styles */
+body {
+    font-family: 'Itim', cursive; /* ใช้ฟอนต์ Itim */
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+}
+
+h1, h2, h3 {
+    color: #2c3e50;
+    text-align: center;
+}
+
+.container {
+    width: 8cm;
+    margin: auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+input[type="text"] {
+    font-family: 'Itim', cursive; /* ใช้ฟอนต์ Itim */
+    width: 93%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    font-family: 'Itim', cursive; /* ใช้ฟอนต์ Itim */
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+    width: 100%; /* ตั้งค่าความกว้างเท่ากับ input */
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+#qrcode {
+    margin: 10px 0;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+#customer-info {
+    padding-top: 10px;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+p {
+    margin: 5px 0;
+}
+
+.print-btn {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.print-btn:hover {
+    background-color: #45a049;
+}
+
+/* ซ่อนทุกอย่างเมื่ออยู่ในโหมดพิมพ์ */
+@media print {
+    body * {
+        visibility: hidden;
+    }
+
+    /* แสดงเฉพาะองค์ประกอบที่มี id="print-section" */
+    #print-section, #print-section * {
+        visibility: visible;
+    }
+
+    /* ทำให้พิมพ์เฉพาะ id="print-section" */
+    #print-section {
+        width: 8cm;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border: 1px solid black; /* เส้นขอบเพื่อให้เห็นชัดเจน */
+        padding: 10px;
+    }
+}
+
+.button-container {
+    display: flex;
+    justify-content: center; /* จัดตำแหน่งในแนวนอน */
+    align-items: center; /* จัดตำแหน่งในแนวตั้ง (ถ้าต้องการ) */
+
+}
+
+.logout-btn {
+    width: 7.5cm;
+    background-color: #e74c3c; /* สีพื้นหลังแดง */
+    color: white; /* สีข้อความขาว */
+    border: none; /* ไม่มีกรอบ */
+    padding: 10px 20px; /* ระยะห่างภายใน */
+    border-radius: 5px; /* มุมมน */
+    cursor: pointer; /* เปลี่ยนเคอร์เซอร์เมื่อชี้ */
+    font-size: 16px; /* ขนาดตัวอักษร */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* เอฟเฟกต์การเปลี่ยนแปลง */
+    margin-bottom: 20px;
+}
+
+.logout-btn:hover {
+    background-color: #c0392b; /* สีพื้นหลังแดงเข้มเมื่อชี้ */
+    transform: translateY(-2px); /* ยกขึ้นเล็กน้อยเมื่อชี้ */
+}

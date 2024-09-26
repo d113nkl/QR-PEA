@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login</title>
+  <base target="_top">
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f2f2f2;
+      font-family: Arial, sans-serif;
+    }
+    .login-container {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      width: 300px;
+      text-align: center;
+    }
+    .login-container h2 {
+      margin-bottom: 20px;
+    }
+    .login-container input[type="text"],
+    .login-container input[type="password"] {
+      width: calc(100% - 22px); /* ชดเชย padding และ border */
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box; /* รวม padding และ border */
+    }
+    .login-container button {
+      width: calc(100% - 22px); /* ชดเชย padding และ border */
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      box-sizing: border-box; /* รวม padding และ border */
+    }
+    .login-container button:hover {
+      background-color: #45a049;
+    }
+    #message {
+      margin-top: 10px;
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <h2>Login:PEA</h2>
+    <form id="loginForm" onsubmit="handleLogin(event)">
+      <input type="text" id="username" name="username" placeholder="Username"><br>
+      <input type="password" id="password" name="password" placeholder="Password"><br><br>
+      <button type="submit">Login</button>
+    </form>
+    <div id="message"></div>
+  </div>
+</body>
+<script src="login.js"></script>
+</html>

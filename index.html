@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Payment</title>
+    <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css"> <!-- เชื่อมโยงไฟล์ CSS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="script.js" defer></script> <!-- เชื่อมโยงไฟล์ JS -->
+</head>
+<body>
+
+    <div class="button-container">
+        <button class="logout-btn" onclick="handleLogout()">Logout</button>
+    </div>
+    
+    <div class="container">
+        <label for="ca-input">หมายเลขผู้ใช้ไฟ:</label>
+        <input type="text" id="ca-input" placeholder="CA">
+        <button onclick="generateQRCodeAndCallAPI()">สร้าง</button>
+        <br>
+        <div id="print-section">
+            <h2>ข้อมูลสำหรับจ่ายค่าไฟ</h2>
+            <div id="qrcode"></div>
+            <div id="customer-info"></div>
+        </div>
+        <button class="print-btn" onclick="window.print()">พิมพ์</button>
+    </div>
+</body>
+</html>
