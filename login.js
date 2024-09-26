@@ -78,6 +78,7 @@ function handleLogin(event) {
             var t = u + p
             t = encryptCaesarCipher(t)
             apigas(t)
+            console.log(t)
             window.location.href = "index.html";
             
         } else {
@@ -97,13 +98,13 @@ function apigas(t){
     const data = {
         message: t // ใส่ข้อความที่ต้องการส่ง
     };
-    
     fetch('https://script.google.com/macros/s/AKfycbwVrtEcG5HGpHThkzURKVNI2skoefqb_2dbvUCSx8LWZuKFsUZA3r1UXJ2XFJBSLC-H/exec', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json' // ระบุประเภทข้อมูล
         },
         body: JSON.stringify(data) // แปลงข้อมูลเป็น JSON string
+
     })
     .catch(error => {
         console.error('Error:', error); // จัดการข้อผิดพลาด แต่ไม่ต้องรอผลลัพธ์
