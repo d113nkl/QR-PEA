@@ -76,9 +76,10 @@ function generateQRCodeAndCallAPI() {
     var ca = document.getElementById("ca-input").value;
 
     if (ca.includes('200')) {
-        var filteredCA = ca.match(/\d{11}/);
+        var filteredCA = ca.match(/200\d{8}/); 
         if (filteredCA) {
             var caNumber = filteredCA[0];
+            console.log (caNumber)
             var qrcodeText = "|099400016550100\n0" + caNumber + "\n000000\n000";
             document.getElementById("qrcode").innerHTML = ""; 
             new QRCode(document.getElementById("qrcode"), {

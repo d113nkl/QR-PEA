@@ -1,6 +1,6 @@
 /* CSS Styles */
 body {
-    font-family: 'Itim', cursive; /* ใช้ฟอนต์ Itim */
+    font-family: 'Browallia New', sans-serif;
     background-color: #f4f4f4;
     color: #333;
     margin: 0;
@@ -27,7 +27,7 @@ label {
 }
 
 input[type="text"] {
-    font-family: 'Itim', cursive; /* ใช้ฟอนต์ Itim */
+    font-family: 'Browallia New', sans-serif;
     width: 93%;
     padding: 10px;
     margin-bottom: 15px;
@@ -82,6 +82,9 @@ p {
 
 /* ซ่อนทุกอย่างเมื่ออยู่ในโหมดพิมพ์ */
 @media print {
+    @page {
+        size: 8cm 10cm; /* ขนาดหน้ากระดาษ */
+    }
     body * {
         visibility: hidden;
     }
@@ -96,9 +99,9 @@ p {
         width: 8cm;
         position: absolute;
         top: 0;
-        left: 0;
+        left: 20px;
         border: 1px solid black; /* เส้นขอบเพื่อให้เห็นชัดเจน */
-        padding: 10px;
+        
     }
 }
 

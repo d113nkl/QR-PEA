@@ -1,3 +1,4 @@
+
 document.addEventListener("DOMContentLoaded", function() {
     // ดึงข้อมูลจาก localStorage
     var username = localStorage.getItem("username");
@@ -24,6 +25,8 @@ document.addEventListener("DOMContentLoaded", function() {
             if (data.error === false) {
                 // ถ้า login สำเร็จ ให้ไปที่หน้า Page1.html
                 window.location.href = "index.html";
+
+
             } else {
                 // ถ้า login ไม่สำเร็จ ให้แสดงข้อความ error และเคลียร์ข้อมูลใน localStorage
                 localStorage.removeItem("fullname");
@@ -31,6 +34,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 localStorage.removeItem("password");
                 document.getElementById("message").textContent = "Stored login failed, please log in again.";
                 document.getElementById("message").style.color = "red";
+  
             }
         })
         .catch(error => {
