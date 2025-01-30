@@ -71,6 +71,37 @@ const constclss = {
     "M0100020": "5(15) A.",
     "M0100010": "3(9) A."
 };
+const constType ={
+  "C010": "CT. 500 V.",
+  "C013": "CT. 600 V.",
+  "C016": "CT. 11000 V.",
+  "C020": "CT. 22000 V.",
+  "C030": "CT. 33000 V.",
+  "C040": "CT. 115000 V.",
+  "EGATMT": "มิเตอร์กฟผ.",
+  "M010": "METER 1 P 2 W 220 V.",
+  "M020": "METER 1 P 2 W 220 V. WITH CT.",
+  "M030": "METER 3 P 4 W 220/380 V.",
+  "M040": "METER 3 P 3 W 110 V.",
+  "M050": "METER 3 P 4 W 64/110 V.",
+  "M060": "METER 3 P 4 W 220/380 V W. CT.",
+  "M070": "METER 1 P 2 W 230 V.",
+  "M080": "METER 3 P 4 W 230/400 V.",
+  "TRNSFMR": "หม้อแปลงผู้ใช้ไฟฟ้า",
+  "UNMETER": "ไม่ได้ติดตั้งมิเตอร์",
+  "V005": "VT. 11000 V.",
+  "V010": "VT. 22000 V.",
+  "V020": "VT. 33000 V.",
+  "V030": "VT. 69000 V.",
+  "V040": "VT. 115000 V.",
+  "V050": "VT. 230000 V.",
+  "2001": "ก๊าซมิเตอร์",
+  "2002": "ตัวแก้ไข",
+  "2003": "ตัวควบคุมความดัน",
+  "3001": "มิเตอร์น้ำ",
+  "4001": "มิเตอร์วัดน้ำเสีย"
+}
+
 
 function generateQRCodeAndCallAPI() {
     var ca = document.getElementById("ca-input").value;
@@ -118,6 +149,7 @@ function generateQRCodeAndCallAPI() {
 
 function displayCustomerInfo(data) {
     var meterSizeText = constclss[data.METER_SIZE] || data.METER_SIZE;
+    var meterTypeText = constclss[data.METER_TYPE] || data.METER_TYPE;
 
     var customerInfoHtml = `
         <p><strong>หมายเลขผู้ใช้ไฟ:</strong> ${data.CA}</p>
@@ -126,6 +158,7 @@ function displayCustomerInfo(data) {
         <p><strong>ที่อยู่:</strong> ${data.billAddress}</p>
         <p><strong>อัตรา:</strong> ${data.ETTAT_COD}</p>
         <p><strong>ขนาดมิเตอร์:</strong> ${meterSizeText} (${data.METER_SIZE})</p>
+        <p><strong>ประเภทมิเตอร์:</strong> ${meterTypeText} (${data.METER_TYPE})</p>
     `;
     document.getElementById("customer-info").innerHTML = customerInfoHtml; 
 }
