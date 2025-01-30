@@ -149,7 +149,7 @@ function generateQRCodeAndCallAPI() {
 
 function displayCustomerInfo(data) {
     var meterSizeText = constclss[data.METER_SIZE] || data.METER_SIZE;
-    var meterTypeText = constclss[data.METER_TYPE] || data.METER_TYPE;
+    var meterTypeText = constType[data.METER_TYPE] || data.METER_TYPE;
 
     var customerInfoHtml = `
         <p><strong>หมายเลขผู้ใช้ไฟ:</strong> ${data.CA}</p>
